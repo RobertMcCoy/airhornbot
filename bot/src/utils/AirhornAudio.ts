@@ -99,7 +99,7 @@ async function playSound(guildId: string): Promise<void> {
       // Play the sound from the queue
       const dispatcher = connection.play(Readable.from(audioBuffers[itemFromQueue.soundFileName]), {
         type: "ogg/opus",
-        volume: false
+        volume: 0.10
       });
       // Wait until the sound finishes
       await new Promise<void>(resolve => {

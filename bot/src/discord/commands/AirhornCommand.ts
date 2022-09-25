@@ -7,7 +7,6 @@ import {
   InteractionCommandOption
 } from "../DiscordInteraction";
 import {enqueueSound, getSound} from "../../utils/AirhornAudio";
-import {trackPlay} from "../../utils/StatsTracker";
 
 export class AirhornCommand extends DiscordCommand {
 
@@ -89,7 +88,6 @@ export class AirhornCommand extends DiscordCommand {
         ]
       }
     ]);
-    trackPlay(guild.id, voiceChannel.id, guildMember.id, sound.sound);
     // Dispatch the sound
     enqueueSound(voiceChannel, sound.variantFile);
   }

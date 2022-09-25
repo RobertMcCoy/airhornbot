@@ -8,7 +8,6 @@ import {
 import {DiscordButton} from "../DiscordButton";
 import {Client} from "discord.js-light";
 import {enqueueSound, getSound} from "../../utils/AirhornAudio";
-import {trackPlay} from "../../utils/StatsTracker";
 
 export class PlayButton extends DiscordButton {
 
@@ -71,7 +70,6 @@ export class PlayButton extends DiscordButton {
     }
     // Don't await this, play the sound ASAP
     discordCommandResponder.sendBackDeferredUpdateMessage();
-    trackPlay(guild.id, voiceChannel.id, guildMember.id, sound.sound);
     // Dispatch the sound
     enqueueSound(voiceChannel, sound.variantFile);
   }

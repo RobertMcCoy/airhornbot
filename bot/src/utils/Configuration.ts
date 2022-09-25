@@ -10,20 +10,7 @@ interface Configuration {
       airhorn: string;
     };
   };
-
-  web: {
-    port: number;
-    hostStatic: boolean;
-    staticDirectory: string;
-  };
-
-  redis: {
-    host: string;
-    port: number;
-    password: string;
-    prefix: string;
-  };
-
+  
   settings: {
     maxQueueSize: number;
   }
